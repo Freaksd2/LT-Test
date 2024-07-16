@@ -1,5 +1,7 @@
-len = int(5)
-step = int(4) - 1
+import sys
+
+len = int(sys.argv[1])
+step = int(sys.argv[2]) - 1
 
 pos = 0
 
