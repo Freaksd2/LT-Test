@@ -1,3 +1,6 @@
+import sys
+
+
 def calculate_moves(array, target) -> int:
     res = 0
 
@@ -9,7 +12,7 @@ def calculate_moves(array, target) -> int:
 nums = []
 
 
-with open('numbers.txt', 'r') as f:
+with open(str(sys.argv[1]), 'r') as f:
     for line in f:
         nums.append(int(line))
 
