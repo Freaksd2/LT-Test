@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 def analyze_object(obj):
@@ -24,19 +25,19 @@ def analyze_array(arr):
 
 values = {}
 
-with open('values.json', 'r') as f:
+with open(str(sys.argv[1]), 'r') as f:
     values_raw = json.load(f)
 
 for obj in values_raw['values']:
     values[obj['id']] = obj['value']
 
 
-with open('tests.json', 'r') as f:
+with open(str(sys.argv[2]), 'r') as f:
     report = json.load(f)
 
 
 analyze_object(report)
 
 
-with open('report.json', 'w') as f:
+with open(str(sys.argv[3]), 'w') as f:
     json.dump(report, f, indent=4)
